@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.notFound {
+    margin-top: 79px;
+    &__content {
+        padding: 84px 10px;
+        border-radius: 24px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            color: #333;
+            font-size: 150px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        img {
+            max-width: 524px;
+            margin-bottom: 20px;
+        }
+        h5 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            line-height: 1.2;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-size: 18px;
+        }
+        button {
+            background: #33a4ff;
+            font-size: 16px;
+            padding: 14px 35px;
+            color: white;
+            border-radius: 8px;
+            &:hover {
+                background: #007bff;
+                transition: .2s;
+            }
+        }
+    }
+}   

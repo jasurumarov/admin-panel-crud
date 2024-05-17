@@ -13,10 +13,10 @@ const ManageUsers = () => {
         <div className="container">
           <h2>Manage Users</h2>
         </div>
-        {
+        { 
         data?.length ?
         <Products isAdmin={true} isProduct={false} data={data}/>
-        : <div style={{marginTop: "-140px"}}><Empty/></div>
+        : <div style={{marginTop: "40px"}}><Empty/></div>
       }
       </div>
     </div>

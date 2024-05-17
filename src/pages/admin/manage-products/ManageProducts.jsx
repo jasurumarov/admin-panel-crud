@@ -15,7 +15,7 @@ const ManageProducts = () => {
       {
         data?.length ?
         <Products isAdmin={true} isProduct={true} data={data}/>
-        : <div style={{marginTop: "-140px"}}><Empty/></div>
+        : <div style={{marginTop: "40px"}}><Empty/></div>
       }
     </div>
   )

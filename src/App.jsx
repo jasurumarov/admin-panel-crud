@@ -21,10 +21,14 @@ import CreateProducts from './pages/admin/create-products/CreateProducts';
 import CreateUsers from './pages/admin/create-users/CreateUsers';
 import ManageProducts from './pages/admin/manage-products/ManageProducts';
 import ManageUsers from './pages/admin/manage-users/ManageUsers';
+import AnimCursor from './components/animCursor/AnimCursor'
+import NotFound from './components/notFound/NotFound'
 
 function App() {
   return (
     <>
+      <AnimCursor/>
+
       <Header />
 
       <Routes>
@@ -49,6 +53,7 @@ function App() {
           </Route>
         </Route>
         
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
 
       <ToastContainer/>
