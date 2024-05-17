@@ -1,0 +1,162 @@
+@use '../abstracts' as *;
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 10;
+    border-bottom: 0.3px solid #46A35880;
+    .header__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 26px 0 18px 0;
+
+        ul {
+            display: flex;
+            gap: 50px;
+
+            a {
+                font-family: Roboto;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20.11px;
+                color: #3D3D3D;
+            }
+
+            a.active {
+                transition: .2s;
+                font-weight: 700;
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            svg {
+                font-size: 22px;
+                color: #3D3D3D;
+            }
+
+            a {
+                width: 24px;
+                height: 24px;
+                position: relative;
+
+                .heart-icon {
+                    margin-top: 2px;
+                    font-size: 19px;
+                }
+
+                sup {
+                    background: #46A358;
+                    border-radius: 50%;
+                    width: 16px;
+                    height: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // padding: 2px 5px;
+                    position: absolute;
+                    top: -4px;
+                    right: -6px;
+                    font-family: Roboto;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 12.57px;
+                    color: white;
+                }
+            }
+
+            button {
+                background: #46A358;
+                border-radius: 6px;
+                color: white;
+                padding: 7px 17px 8px 17px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-family: Roboto;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20.11px;
+                letter-spacing: .4px;
+                transition: .2s;
+
+                svg {
+                    color: white;
+                }
+
+                &:active {
+                    scale: .98;
+                    opacity: .87;
+                }
+            }
+        }
+
+        .menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            span {
+                border-radius: 4px;
+                width: 24px;
+                height: 3px;
+                background: #3D3D3D;
+            }
+        }
+    }
+}
+
+@media (max-width: 833px) {
+    header {
+        .header__content {
+            gap: 0;
+            .header-logo {
+                display: none;
+            }
+            ul {
+                z-index: 10;
+                padding: 24px;
+                position: absolute;
+                top: 81px;
+                left: 0;    
+                width: 100%;
+                background: white;
+                box-shadow: 0 3px 5px #0002;
+                flex-direction: column;
+                gap: 20px !important;
+                justify-content: center;
+                align-items: center;
+                transition: .3s ease;
+                transform-origin: top;
+                transform: scaleY(0);
+            }
+            ul.show {
+                transform: scaleY(1);
+            }
+            div {
+                order: 1;
+            }
+            .menu-btn {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        .header__content {
+            div {
+                order: 1;
+                gap: 24px;
+            }
+        }
+    }
+}
