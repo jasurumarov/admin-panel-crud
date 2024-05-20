@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleHeart } from '../../context/slice/heartSlice'
 import { addToCart } from '../../context/slice/cartSlice'
@@ -13,8 +13,12 @@ import { toast } from 'react-toastify'
 import { BiMessageDetail } from 'react-icons/bi'
 import { BsInfoCircle } from 'react-icons/bs'
 import { GrLocation } from 'react-icons/gr'
+import EditModel from '../editModel/EditModel'
 
 const Products = ({data, loading, error, isProduct, isAdmin}) => {
+    const [ editUser, setEditUser ] = useState(null)
+    const [ editProduct, setEditProduct ] = useState(null)
+ 
     let [deleteUser, {}] = useDeleteUserMutation()
     let [deleteProduct, {}] = useDeleteProductsMutation()
     const handleDeleteUser = (id) => {
@@ -26,6 +30,14 @@ const Products = ({data, loading, error, isProduct, isAdmin}) => {
             if (window.confirm("Are you sure?")) {
                 deleteUser(id)
             }
+        }
+    }
+
+    const handleEdit = (el) => {
+        if (isProduct) {
+            setEditProduct(el)
+        } else {
+            setEditUser(el)
         }
     }
 
@@ -86,7 +98,7 @@ const Products = ({data, loading, error, isProduct, isAdmin}) => {
                 isAdmin 
                 ? <div className="admin-btns">
                     <button onClick={() => handleDeleteUser(el.id)}>Delete</button>
-                    <button>Edit</button>
+                    <button onClick={() => handleEdit(el)}>Edit</button>
                 </div>
                 : <></>
             }
@@ -100,10 +112,14 @@ const Products = ({data, loading, error, isProduct, isAdmin}) => {
                 <div className="products__cards">
                     {product}
                 </div>
+                {
+                    editProduct || editUser ?
+                    <EditModel userData={editUser} productData={editProduct} setUserData={setEditUser} setProductData={setEditProduct} isProduct={isProduct}/> : <></>
+                }
             </div>
         </div>
     </div>
   )
 }
 
-export default Products
+export default memo(Products)

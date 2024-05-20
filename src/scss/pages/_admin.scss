@@ -137,3 +137,51 @@
         }
     }
 }
+
+.edit__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0006;
+    z-index: 10; 
+    backdrop-filter: blur(3px);
+}
+
+.edit__wrapper {
+    width: 400px;
+    background: #fff;
+    position: fixed;
+    z-index: 11;
+    top: 50%;    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 6px;
+    button {
+        transition: .2s;
+        background: #3D3D3D;
+        color: white;
+        width: 100px;
+        height: 30px;
+        border-radius: 6px;
+        &:hover {
+            opacity: .93;
+        }
+        &:active {
+            scale: .98;
+        }        
+    }
+    input {
+        padding: 0 8px;
+    }
+    input, button {
+        width: 100%;
+        height: 38px;
+        margin-top: 20px;
+    }
+    button:disabled {
+        background: #aeabab;
+    }
+}
