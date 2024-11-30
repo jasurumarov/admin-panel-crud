@@ -5,20 +5,20 @@ import axios from "axios";
 
 const Login = () => {
   let navigate = useNavigate();
-  const [username, setUsername] = useState("kminchelle");
-  const [password, setPassword] = useState("0lelplR");
+  const [username, setUsername] = useState("emilys");
+  const [password, setPassword] = useState("emilyspass");
   const [loading, setLoading] = useState(false)
 
   const handleLogin = e => {
     e.preventDefault()
-    let user = {username, password}
+    let user = {username, password, }
     setLoading(true)
 
     axios 
       .post('https://dummyjson.com/auth/login', user) 
       .then(res => {
         toast.success("welcome")
-        localStorage.setItem("x-auth-token", res.data.token)
+        localStorage.setItem("x-auth-token", res.data.accessToken)
         navigate("/admin/create-products")
       })
       .catch(err => {

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery, retry } from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
   // Asosiy API URL
-  baseUrl: "https://66361b4c415f4e1a5e264945.mockapi.io/api",
+  baseUrl: "https://674ae84c71933a4e8853c86c.mockapi.io/api",
   prepareHeaders: (headers) => {
     const token = localStorage.getItem("token")
     if (token) {

@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // Pages
 import CartRouter from './router/cartRouter/CartRouter'
 import Home from './pages/home/Home'
-import Users from './pages/users/Users'
+// import Users from './pages/users/Users'
 import Wishlist from './pages/wishlist/Wishlist'
 import Cart from './pages/cart/Cart'
 import Contact from './pages/contact/Contact';
@@ -33,7 +33,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/users' element={<Users />} />
+        {/* <Route path='/users' element={<Users />} /> */}
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/contact-us' element={<Contact />} />
 

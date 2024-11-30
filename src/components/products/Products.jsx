@@ -67,7 +67,7 @@ const Products = ({data, loading, error, isProduct, isAdmin}) => {
                                 <FaRegHeart/>
                             }
                         </div>
-                        <div><FiSearch /></div>
+                        {/* <div><FiSearch /></div> */}
                     </>
                         :
                     <>

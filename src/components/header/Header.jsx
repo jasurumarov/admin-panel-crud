@@ -32,8 +32,8 @@ const Header = () => {
             </Link>
             <ul className={menu ? "show" : ""}>
               <NavLink to={"/"}>Home</NavLink>
-              <NavLink to={"users"}>Users</NavLink>
-              <NavLink to={"plant-care"}>Plant Care</NavLink>
+              {/* <NavLink to={"users"}>Users</NavLink> */}
+              {/* <NavLink to={"plant-care"}>Plant Care</NavLink> */}
               <NavLink to={"contact-us"}>Contact Us</NavLink>
             </ul>
             <div>
